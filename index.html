@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ============================================
+         META TAGS & BASIC SETUP
+    ============================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawon | Automation Engineer</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/13309/13309369.png" type="image/png">
+
+    <!-- ============================================
+         EXTERNAL DEPENDENCIES
+    ============================================= -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ============================================
+         CSS IMPORTS
+    ============================================= -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-gradient-to-b from-gray-50 to-white">
+    <!-- ============================================
+         UNIVERSAL PAGE LOADER
+    ============================================= -->
+    <div id="universal-page-loader" class="smooth-universal-loader">
+        <div class="smooth-loader-content">
+            <div class="smooth-loader"></div>
+            <div class="smooth-loader-text pt-5">Loading...</div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         NAVIGATION SECTION
+    ============================================= -->
+    <nav class="fixed w-full glass-card z-50 py-3">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <!-- Logo Left -->
+                <div class="flex items-center gap-3">
+                    <a href="#hero" class="flex items-center gap-3 group">
+                        <div class="workflow-node rounded-full w-10 h-10 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-500 filter drop-shadow-[0_0_8px_rgba(59,130,246,0.7)]"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">Shawon</span>
+                    </a>
+                </div>
+
+                <!-- Center Navigation (Desktop) -->
+                <div class="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
+                    <div class="relative flex items-center">
+                        <!-- Navigation Links -->
+                        <div class="flex gap-8 px-2 py-2">
+                            <a href="#hero" class="nav-link-smooth relative px-4 py-2" data-index="0">
+                                <span>Home</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                            <a href="#skills" class="nav-link-smooth relative px-4 py-2" data-index="1">
+                                <span>Skills</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                            <a href="#projects" class="nav-link-smooth relative px-4 py-2" data-index="2">
+                                <span>Projects</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                            <a href="#services" class="nav-link-smooth relative px-4 py-2" data-index="3">
+                                <span>Services</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                            <a href="#faq" class="nav-link-smooth relative px-4 py-2" data-index="2">
+                                <span>FAQ</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Contact Button (Desktop) -->
+                <div class="hidden lg:block">
+                    <a href="#contact"
+                        class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-5 py-2 pill font-medium hover:opacity-90 transition shadow-md hover:shadow-lg">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-600">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden mt-4 hidden animate-fade-in">
+                <div class="flex flex-col gap-3 pb-4">
+                    <a href="#hero" class="nav-link">Home</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <a href="#contact"
+                        class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-5 py-2 pill font-medium text-center">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================= -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-16">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-full blur-3xl">
+            </div>
+        </div>
+
+        <!-- Floating Tech Icons -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <div
+                class="absolute top-20 left-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center animate-float-slow">
+                <i class="fab fa-google text-blue-500 text-xl"></i>
+            </div>
+            <div
+                class="absolute top-40 right-20 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center animate-float">
+                <i class="fas fa-robot text-cyan-500 text-2xl"></i>
+            </div>
+            <div
+                class="absolute bottom-40 left-20 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center animate-float-slow">
+                <i class="fab fa-chrome text-green-500 text-xl"></i>
+            </div>
+            <div
+                class="absolute bottom-20 right-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center animate-float">
+                <i class="fas fa-brain text-purple-500 text-2xl"></i>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="relative z-10 mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column - Text Content -->
+                <div class="text-center pt-5 lg:text-left">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-500/20 mb-6">
+                        <span
+                            class="text-sm font-semibold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">AUTOMATION
+                            ENGINEER</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+                        <span class="block text-gray-900">Transform</span>
+                        <span class="gradient-text">Repetitive Tasks</span>
+                        <span class="block text-gray-900">Into Seamless</span>
+                        <span class="gradient-text">Automation</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                        I create custom automation solutions that save
+                        <span class="font-bold text-blue-600">10-20 hours/week</span>
+                        by eliminating manual work. No bloated SaaS, just efficient, scalable code.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center gap-3 mb-12">
+                        <a href="#contact"
+                            class="group relative overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold  transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <span class="relative z-10 flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                                    </path>
+                                </svg>
+                                <span>Get Free Consultation</span>
+                            </span>
+                        </a>
+
+                        <a href="#video-intro"
+                            class="group relative bg-white text-gray-700 px-6 py-3 rounded-full font-medium border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2 hover:bg-cyan-50">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Watch Introduction</span>
+                            </span>
+                            <span
+                                class="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                                2 min
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Signals -->
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                            <div class="flex items-center gap-3">
+                                <div class="flex -space-x-3">
+                                    <div class="w-7 h-7 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                                        <img src="https://noushad.pages.dev/images/profile.jpg" alt="Client 1"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTAwIiBmaWxsPSIjM0I4MkY2Ii8+Cjwvc3ZnPgo='">
+                                    </div>
+                                    <div class="w-7 h-7 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                                        <img src="https://avatars.githubusercontent.com/u/37926875?s=400&u=75e13033aceca5344490e75412ace792d1eb86e6&v=4"
+                                            alt="Client 2" class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTAwIiBmaWxsPSIjMTBCOTU2Ii8+Cjwvc3ZnPgo='">
+                                    </div>
+                                    <div
+                                        class="w-7 h-7 rounded-full overflow-hidden border-2 border-white shadow-sm relative">
+                                        <img src="https://avatars.githubusercontent.com/u/38437058?v=4" alt="Client 3"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTAwIiBmaWxsPSIjOEI1Q0Y2Ii8+Cjwvc3ZnPgo='">
+                                        <div class="absolute inset-0  rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold text-gray-700">200+ Clients</span>
+                                    <span class="text-xs text-gray-400">Worldwide</span>
+                                </div>
+                            </div>
+
+                            <div class="hidden md:block text-gray-300">|</div>
+
+                            <div class="flex items-center gap-2 group">
+                                <div class="relative">
+                                    <i class="fas fa-shield-alt text-green-500 text-lg"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold text-gray-700">100% Satisfaction</span>
+                                    <span class="text-xs text-gray-400">Guaranteed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Visual Element -->
+                <div class="relative">
+                    <!-- Profile Card -->
+                    <div
+                        class="relative glass-card rounded-2xl p-8 max-w-2xl mx-auto lg:mx-0 transform lg:translate-x-8">
+                        <!-- Profile Image -->
+                        <div class="relative mb-6">
+                            <div
+                                class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl group">
+                                <img src="https://avatars.githubusercontent.com/u/37926875?s=400&u=75e13033aceca5344490e75412ace792d1eb86e6&v=4"
+                                    alt="mhshan"
+                                    class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                                    onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTAwIiBmaWxsPSIjNEU0NjVGIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI1MCIgZm9udC13ZWlnaHQ9ImJvbGQiPk1IPC90ZXh0Pgo8L3N2Zz4K'">
+                            </div>
+                            <!-- Online Status -->
+                            <div
+                                class="absolute bottom-2 right-1/2 translate-x-12 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full border-4 border-white shadow-lg">
+                                <div class="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                            </div>
+                        </div>
+                        <!-- Info -->
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold gradient-text mb-2">Mahmudul Hasan Shaown</h3>
+                            <p class="text-gray-600 font-medium mb-6">Google Apps Script & Workflow Automation
+                                Specialist</p>
+
+                            <!-- My Journey -->
+                            <div class="text-left space-y-4 text-gray-700">
+                                <h4 class="font-bold text-gray-800 text-lg mb-3">My Journey</h4>
+                                <p>
+                                    I'm <span class="font-semibold text-blue-600">Shawon</span>, also known as <span
+                                        class="font-semibold">mhshan</span>, or <span class="font-semibold">Mahmudul
+                                        Hasan</span>. I'm a web developer and programmer with <span
+                                        class="font-semibold text-blue-600">6+ years</span> of experience.
+                                </p>
+                                <p>
+                                    I specialize in web development, Google Apps Script, browser extensions, and
+                                    business automation.
+                                </p>
+                                <p>
+                                    Along with freelancing, I work with a cybersecurity firm that supports <span
+                                        class="font-semibold">U.S. government–level security compliance</span>. I've
+                                    successfully completed <span class="font-semibold text-blue-600">517+
+                                        projects</span> with positive client feedback, and I focus on delivering
+                                    solutions that fit real business needs.
+                                </p>
+                                <div
+                                    class="bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-500 px-4 py-3 rounded-r-lg">
+                                    <p class="font-medium text-gray-800 italic">
+                                        <span class="font-bold text-blue-600">No clutter. No expensive SaaS
+                                            tools.</span><br>
+                                        Just clean logic, solid code, and precise solutions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Elements Around Card -->
+                    <div
+                        class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl rotate-12 opacity-20 blur-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         VIDEO INTRODUCTION SECTION
+    ============================================= -->
+    <section id="video-intro" class="relative py-10 px-4 z-10 bg-gradient-to-b from-gray-50/50 to-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-black mb-4">
+                    <span class="gradient-text">Meet Your Automation Partner</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Watch this 2-minute video to see how I approach automation differently
+                </p>
+            </div>
+
+            <div class="glass-strong rounded-2xl overflow-hidden shadow-2xl">
+                <div class="relative" style="padding-bottom: 56.25%; height: 0;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                        src="https://www.youtube.com/embed/sVPr6KcJQtM"
+                        title="Noushad - Automation Specialist Introduction" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen=""></iframe>
+                </div>
+            </div>
+
+            <!-- Trust Signals Below Video -->
+            <div class="grid md:grid-cols-3 gap-4 md:gap-6 mt-12">
+                <!-- Projects Card -->
+                <div
+                    class="group relative overflow-hidden bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 text-center border border-gray-200/60 hover:border-blue-300/60 transition-all duration-300  hover:shadow-xl shadow-lg">
+                    <div
+                        class="absolute -right-6 -top-6 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500">
+                    </div>
+                    <div class="relative mb-3">
+                        <div class="text-4xl font-black gradient-text">517+</div>
+                        <div
+                            class="absolute -top-1 -right-2 w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-bold text-lg">Projects Delivered</div>
+                        <div class="text-gray-500 text-sm">
+                            <span class="inline-flex items-center gap-1">
+                                <i class="fas fa-heart text-red-400"></i>
+                                98% Client Satisfaction
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <!-- Experience Card -->
+                <div
+                    class="group relative overflow-hidden bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 text-center border border-gray-200/60 hover:border-purple-300/60 transition-all duration-300  hover:shadow-xl shadow-lg">
+                    <div
+                        class="absolute -left-6 -bottom-6 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500">
+                    </div>
+                    <div class="relative mb-3">
+                        <div class="text-4xl font-black gradient-text">6+</div>
+                        <div
+                            class="absolute -top-1 -right-2 w-6 h-6 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-star text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-bold text-lg">Years Experience</div>
+                        <div class="text-gray-500 text-sm">
+                            <span class="inline-flex items-center gap-1">
+                                <i class="fas fa-chart-line text-purple-400"></i>
+                                Proven Track Record
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+
+                <!-- Response Time Card -->
+                <div
+                    class="group relative overflow-hidden bg-gradient-to-br from-white to-gray-50/80 rounded-2xl p-6 text-center border border-gray-200/60 hover:border-green-300/60 transition-all duration-300  hover:shadow-xl shadow-lg">
+                    <div
+                        class="absolute -right-6 -bottom-6 w-20 h-20 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500">
+                    </div>
+                    <div class="relative mb-3">
+                        <div class="text-4xl font-black gradient-text">24-48h</div>
+                        <div
+                            class="absolute -top-1 -right-2 w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bolt text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-bold text-lg">Response Time</div>
+                        <div class="text-gray-500 text-sm">
+                            <span class="inline-flex items-center gap-1">
+                                <i class="fas fa-rocket text-blue-400"></i>
+                                Fast & Reliable
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         HOME SECTION
+    ============================================= -->
+    <section id="home" class="pt-24 py-40 pb-20 relative ">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left Content -->
+                <div class="lg:w-1/2">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 pill text-sm mb-6 border border-blue-200">
+                        <i class="fas fa-bolt mr-2"></i> AUTOMATION SPECIALIST
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        I Automate Systems,
+                        <span class="block gradient-text font-bold pt-2 pb-2">Scrape Data</span>
+                        &amp; Scale Workflows
+                    </h1>
+
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Expert in Google Apps Script, workflow automation, web scraping, and browser extensions.
+                        I transform manual processes into intelligent, scalable solutions that save time and reduce
+                        errors.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="#projects"
+                            class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 pill font-medium  transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 active:translate-y-0">
+                            <i class="fas fa-code mr-2"></i>View Projects
+                        </a>
+                        <a href="#contact"
+                            class="border border-gray-300 text-gray-700 px-6 py-3 pill font-medium hover:border-blue-500 hover:bg-blue-50 transition text-center">
+                            <i class="fas fa-paper-plane mr-2"></i>Start a Project
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Projects Delivered -->
+                        <div
+                            class="group bg-gradient-to-br from-blue-50/70 to-blue-25/70 backdrop-blur-sm rounded-2xl p-5 border border-blue-200/50 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/80 shadow-sm flex items-center justify-center backdrop-blur-sm">
+                                    <i class="fas fa-rocket text-blue-600 text-lg"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-700 border border-blue-300/30 backdrop-blur-sm">
+                                    +12
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-gray-800 mb-1">
+                                <span class="count-up" data-target="517">25</span><span class="text-blue-600">+</span>
+                            </div>
+                            <div class="text-sm text-gray-700 font-medium mb-2">Projects Delivered</div>
+                            <div class="text-xs text-gray-500">
+                                <span class="inline-flex items-center">
+                                    <i class="fas fa-circle text-blue-400 mr-1 text-xs"></i>12 active projects
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Hours Automated -->
+                        <div
+                            class="group bg-gradient-to-br from-cyan-50/70 to-cyan-25/70 backdrop-blur-sm rounded-2xl p-5 border border-cyan-200/50 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/80 shadow-sm flex items-center justify-center backdrop-blur-sm">
+                                    <i class="fas fa-clock text-cyan-600 text-lg"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-700 border border-cyan-300/30 backdrop-blur-sm">
+                                    +8%
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-gray-800 mb-1">
+                                <span class="count-up" data-target="15">300</span><span class="text-cyan-600">k+</span>
+                            </div>
+                            <div class="text-sm text-gray-700 font-medium mb-2">Hours Automated</div>
+                            <div class="text-xs text-gray-500">
+                                <span class="inline-flex items-center">
+                                    <i class="fas fa-circle text-cyan-400 mr-1 text-xs"></i>1.2k monthly hours
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Satisfaction -->
+                        <div
+                            class="group bg-gradient-to-br from-red-50/70 to-red-25/70 backdrop-blur-sm rounded-2xl p-5 border border-red-200/50 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/80 shadow-sm flex items-center justify-center backdrop-blur-sm">
+                                    <i class="fas fa-heart text-red-600 text-lg"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-semibold px-3 py-1 rounded-full bg-red-500/10 text-red-700 border border-red-300/30 backdrop-blur-sm">
+                                    +2%
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-gray-800 mb-1">
+                                <span class="count-up" data-target="98">98</span><span class="text-red-600">%</span>
+                            </div>
+                            <div class="text-sm text-gray-700 font-medium mb-2">Client Satisfaction</div>
+                            <div class="text-xs text-gray-500">
+                                <span class="inline-flex items-center">
+                                    <i class="fas fa-circle text-red-400 mr-1 text-xs"></i>380+ reviews
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Response Time -->
+                        <div
+                            class="group bg-gradient-to-br from-purple-50/70 to-purple-25/70 backdrop-blur-sm rounded-2xl p-5 border border-purple-200/50 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center justify-between mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/80 shadow-sm flex items-center justify-center backdrop-blur-sm">
+                                    <i class="fas fa-bolt text-purple-600 text-lg"></i>
+                                </div>
+                                <div
+                                    class="text-xs font-semibold px-3 py-1 rounded-full bg-purple-500/10 text-purple-700 border border-purple-300/30 backdrop-blur-sm">
+                                    -15%
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-gray-800 mb-1">
+                                <span class="text-purple-700">&lt;</span><span class="count-up"
+                                    data-target="24">2</span><span class="text-purple-600">h</span>
+                            </div>
+                            <div class="text-sm text-gray-700 font-medium mb-2">Response Time</div>
+                            <div class="text-xs text-gray-500">
+                                <span class="inline-flex items-center">
+                                    <i class="fas fa-circle text-purple-400 mr-1 text-xs"></i>Avg: 3.2 hours
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:w-1/2">
+                    <div class="glass-card p-8 rounded-2xl">
+                        <div class="text-center mb-8">
+                            <div
+                                class="w-20 h-20 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6 flex items-center justify-center">
+                                <i class="fas fa-robot text-3xl text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Automation Engineer</h3>
+                            <p class="text-gray-600">Google Apps Script &amp; Workflow Specialist</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+                            <!-- Tech Icons -->
+                            <div class="flex items-center gap-3">
+                                <div class="tech-icon">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Google Workspace</div>
+                                    <div class="text-sm text-gray-500">Apps Script</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="tech-icon">
+                                    <i class="fas fa-spider"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Web Scraping</div>
+                                    <div class="text-sm text-gray-500">Data Extraction</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="tech-icon">
+                                    <i class="fab fa-chrome"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Browser Ext</div>
+                                    <div class="text-sm text-gray-500">Chrome API</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="tech-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">AI &amp; ML</div>
+                                    <div class="text-sm text-gray-500">GPT-4 Integration</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terminal -->
+                        <div class="bg-gray-900 rounded-xl p-4 border border-gray-700">
+                            <div class="flex items-center pt-10 gap-2 mb-3">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <div class="text-sm text-gray-400 ml-2 font-mono">terminal ~ mhshan --automation</div>
+                            </div>
+                            <div class="text-sm text-gray-300 space-y-1 font-mono">
+                                <div class="typing-line" data-delay="0"><span class="text-green-400">$</span>
+                                    Initializing automation engine... <span class="text-green-400">▶</span></div>
+                                <div class="typing-line" data-delay="800"><span class="text-green-400">$</span> Loading
+                                    modules... <span class="text-cyan-300 relative inline-flex items-center">
+                                        <span
+                                            class="progress-container w-20 h-2 bg-gray-800 rounded-full overflow-hidden mr-2">
+                                            <span
+                                                class="progress-fill block h-full bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-300 animate-progress-loop-smooth"></span>
+                                        </span>
+                                        <span class="percentage-counter w-8 text-left">
+                                            <span class="counter-text">0%</span>
+                                        </span>
+                                    </span></div>
+                                <div class="typing-line" data-delay="1600"><span class="text-green-400">$</span> Google
+                                    Apps Script: <span class="text-yellow-300">Connecting...</span></div>
+                                <div class="typing-line" data-delay="2400"><span class="text-green-400">$</span> API
+                                    Connections: <span class="text-blue-300">Establishing (5/8)</span></div>
+                                <div class="typing-line" data-delay="3200"><span class="text-green-400">$</span> Status:
+                                    <span class="text-cyan-300">Optimizing workflows<span
+                                            class="cursor-blink">|</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SKILLS SECTION
+    ============================================= -->
+    <section id="skills" class="py-20 px-4 relative ">
+        <div class="container mx-auto max-w-7xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">Skills & Expertise</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Technologies and tools I master to deliver exceptional automation solutions
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Browser Extensions -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
+                            </path>
+                        </svg>
+                        Browser Extensions
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div><span>Chrome Extension API</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div><span>JavaScript/TypeScript</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div><span>Manifest V3</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-indigo-400 rounded-full"></div><span>Content Scripts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Workspace -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        Google Workspace
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div><span>Google Apps Script</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div><span>Google Sheets API</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div><span>Gmail API</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div><span>Google Drive API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Websites -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                        Custom Websites
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div><span>Responsive Design</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div><span>HTML5/CSS3/Tailwind</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div><span>React/Next.js</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div><span>Performance Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Applications -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                        Web Applications
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div><span>Full-Stack Development</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div><span>Node.js/Express.js</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div><span>RESTful APIs</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div><span>Database Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GAS Web Apps -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                        GAS Web Apps
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-cyan-500 rounded-full"></div><span>Google Apps Script Web Apps</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-cyan-500 rounded-full"></div><span>DoPost/DoGet Methods</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-cyan-500 rounded-full"></div><span>HTML Service (UiApp)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-cyan-500 rounded-full"></div><span>Form Handling & Processing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        Automation
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-purple-400 rounded-full"></div><span>Web Scraping</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-purple-400 rounded-full"></div><span>Bash Scripting</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-purple-400 rounded-full"></div><span>Workflow Automation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-purple-400 rounded-full"></div><span>API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        E-commerce
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div><span>Shopify/WordPress
+                                WooCommerce</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div><span>Payment Gateway
+                                Integration</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div><span>Product Management
+                                Systems</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div><span>Shopping Cart
+                                Implementation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & ML -->
+                <div class="skill-card rounded-xl p-6 hover:scale-105 transition-all relative">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                            </path>
+                        </svg>
+                        AI & ML
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div><span>GPT-4 Integration</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div><span>Sentiment Analysis</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div><span>NLP Processing</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full"></div><span>Predictive Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap justify-center gap-3 mt-12">
+                <div class="px-4 py-2 bg-blue-50 text-blue-700 pill text-sm border border-blue-200">Google Apps Script
+                </div>
+                <div class="px-4 py-2 bg-cyan-50 text-cyan-700 pill text-sm border border-cyan-200">Tampermonkey</div>
+                <div class="px-4 py-2 bg-green-50 text-green-700 pill text-sm border border-green-200">Puppeteer</div>
+                <div class="px-4 py-2 bg-purple-50 text-purple-700 pill text-sm border border-purple-200">BeautifulSoup
+                </div>
+                <div class="px-4 py-2 bg-yellow-50 text-yellow-700 pill text-sm border border-yellow-200">Selenium</div>
+                <div class="px-4 py-2 bg-red-50 text-red-700 pill text-sm border border-red-200">Chrome Extensions</div>
+                <div class="px-4 py-2 bg-indigo-50 text-indigo-700 pill text-sm border border-indigo-200">Node.js</div>
+                <div class="px-4 py-2 bg-pink-50 text-pink-700 pill text-sm border border-pink-200">API Integrations
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROJECTS SECTION
+    ============================================= -->
+    <section id="projects" class="py-16 bg-gradient-to-b from-white to-gray-50 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">Automation Projects</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Real-world solutions that save time, reduce errors, and scale
+                    operations</p>
+            </div>
+
+            <!-- Filter Container with transform wrapper -->
+            <div class="filter-transform-wrapper">
+                <!-- Sticky Filter Bar -->
+                <div class="sticky-filter-bar">
+                    <div
+                        class="bg-gradient-to-br from-white/20 to-white/20 backdrop-blur-xl py-4 rounded-xl border border-white/15 shadow-xl shadow-black/5">
+                        <div class="flex flex-col md:flex-row gap-4 justify-between items-center px-5">
+                            <div class="flex flex-wrap gap-3">
+                                <button class="project-filter active" data-filter="all">All Projects</button>
+                                <button class="project-filter" data-filter="finance">Finance</button>
+                                <button class="project-filter" data-filter="utility">Utility</button>
+                                <button class="project-filter" data-filter="ecommerce">E-commerce</button>
+                                <button class="project-filter" data-filter="management">Management</button>
+                                <button class="project-filter" data-filter="ai">AI/ML</button>
+                            </div>
+                            <div class="relative w-full md:w-auto">
+                                <input type="text" id="project-search" placeholder="Search projects..."
+                                    class="search-input w-full md:w-64 bg-white/90 backdrop-blur-md border-cyan/30">
+                                <i
+                                    class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 pt-4">
+                    <!-- Project cards will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center">
+                <a href="#contact"
+                    class="inline-flex items-center bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 pill font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 active:translate-y-0">
+                    <i class="fas fa-eye mr-2"></i> View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+    ============================================= -->
+    <section id="testimonials" class="relative py-20 px-4 z-10 bg-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text">Client Testimonials</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    What clients say about working with me
+                </p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div id="testimonials-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Loading state -->
+                <div class="col-span-full text-center py-12">
+                    <div
+                        class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4">
+                    </div>
+                    <p class="text-gray-600">Loading testimonials...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICES SECTION
+    ============================================= -->
+    <section id="services" class="relative py-20 px-4 z-10 bg-gray-50/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text">Services I Offer</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Explain your business pain points to me, I can convert it into an automation
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Chrome Extensions -->
+                <div class="workflow-node rounded-xl p-8 hover:scale-105 transition-all relative">
+                    <div class="w-12 h-12 bg-indigo-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Extensions & Userscripts</h3>
+                    <p class="text-gray-700 mb-4">Tampermonkey and Chrome Extensions to speed up admin work and scrape
+                        data</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Speed up admin work
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Scrape data efficiently
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Custom browser automation
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Google Sheets Automation -->
+                <div class="workflow-node rounded-xl p-8 hover:scale-105 transition-all relative">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Google Sheets Automation</h3>
+                    <p class="text-gray-700 mb-4">Sync data, generate reports, and trigger alerts automatically</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Sync data across sheets
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Generate automated reports
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Trigger smart alerts
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Web Scraping -->
+                <div class="workflow-node rounded-xl p-8 hover:scale-105 transition-all relative">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Web Scraping</h3>
+                    <p class="text-gray-700 mb-4">Extract data from websites efficiently and reliably</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            E-commerce data extraction
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Lead generation
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Price monitoring
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Gmail Automation -->
+                <div class="workflow-node rounded-xl p-8 hover:scale-105 transition-all relative">
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Gmail Automation</h3>
+                    <p class="text-gray-700 mb-4">Parsing, labelling, routing, and smart replies</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Email parsing & filtering
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Auto-labelling & routing
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Smart auto-replies
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Userscripts -->
+                <div class="workflow-node rounded-xl p-8 hover:scale-105 transition-all relative">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Userscripts</h3>
+                    <p class="text-gray-700 mb-4">Custom scripts to enhance website functionality</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Tampermonkey scripts
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Website enhancements
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Custom features
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Google Docs & Forms -->
+                <div class="workflow-node rounded-xl p-8 hover:scale-105 transition-all relative">
+                    <div class="w-12 h-12 bg-teal-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Google Docs & Forms</h3>
+                    <p class="text-gray-700 mb-4">Auto-generate PDFs, proposals, and contracts</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Auto-generate PDFs
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Dynamic proposals & contracts
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Form processing systems
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+    ============================================= -->
+    <section id="faq" class="py-20 px-4 bg-gradient-to-b from-white to-gray-50/50">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-6">
+                    <span class="gradient-text">Frequently Asked Questions</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Get answers to common questions about my automation services and process
+                </p>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details
+                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">What types of automation do you
+                            specialize in?</h3>
+                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 -mt-2">
+                        <div class="pt-4 border-t border-gray-100">
+                            <p class="text-gray-700 leading-relaxed">
+                                I specialize in <span class="font-semibold text-blue-600">Google Apps Script
+                                    automation</span>,
+                                <span class="font-semibold text-cyan-600">web scraping</span>,
+                                <span class="font-semibold text-purple-600">browser extensions</span>, and
+                                <span class="font-semibold text-indigo-600">workflow automation</span>.
+                                This includes automating repetitive tasks in Google Sheets, Gmail, data extraction from
+                                websites,
+                                and creating custom Chrome extensions to streamline your daily operations.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details
+                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">How long does a typical automation
+                            project take?</h3>
+                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 -mt-2">
+                        <div class="pt-4 border-t border-gray-100">
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                Project duration varies based on complexity:
+                            </p>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start gap-3">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                                        <span class="text-blue-600 font-bold text-sm">1</span>
+                                    </div>
+                                    <span><span class="font-semibold">Simple scripts</span>: 1-3 days (Google Sheets
+                                        macros, basic data extraction)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center mt-0.5">
+                                        <span class="text-cyan-600 font-bold text-sm">2</span>
+                                    </div>
+                                    <span><span class="font-semibold">Medium projects</span>: 1-2 weeks (Chrome
+                                        extensions, API integrations)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mt-0.5">
+                                        <span class="text-purple-600 font-bold text-sm">3</span>
+                                    </div>
+                                    <span><span class="font-semibold">Complex systems</span>: 2-4 weeks (Complete
+                                        workflow automation, multi-platform integration)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details
+                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">What's your pricing structure?</h3>
+                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 -mt-2">
+                        <div class="pt-4 border-t border-gray-100">
+                            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                                <div
+                                    class="p-4 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-200">
+                                    <div class="text-2xl font-bold text-green-600 mb-2">$500+</div>
+                                    <div class="font-semibold text-gray-800">Simple Projects</div>
+                                    <div class="text-sm text-gray-600 mt-1">Basic scripts & automation</div>
+                                </div>
+                                <div
+                                    class="p-4 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-200">
+                                    <div class="text-2xl font-bold text-blue-600 mb-2">$1,000+</div>
+                                    <div class="font-semibold text-gray-800">Standard Projects</div>
+                                    <div class="text-sm text-gray-600 mt-1">Extensions & integrations</div>
+                                </div>
+                                <div
+                                    class="p-4 bg-gradient-to-br from-purple-50 to-white rounded-xl border border-purple-200">
+                                    <div class="text-2xl font-bold text-purple-600 mb-2">$2,500+</div>
+                                    <div class="font-semibold text-gray-800">Complex Systems</div>
+                                    <div class="text-sm text-gray-600 mt-1">Complete workflow solutions</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">
+                                <span class="font-semibold text-blue-600">Flexible options</span> available: hourly rate
+                                ($40-60/hr),
+                                fixed project pricing, or monthly retainers for ongoing automation needs.
+                                I provide detailed quotes after understanding your requirements.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details
+                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">Do you provide ongoing support and
+                            maintenance?</h3>
+                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 -mt-2">
+                        <div class="pt-4 border-t border-gray-100">
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                Yes! All projects include:
+                            </p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
+                                    <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-life-ring text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-800">30-Day Support</div>
+                                        <div class="text-sm text-gray-600">Free bug fixes & adjustments</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
+                                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-book text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-800">Full Documentation</div>
+                                        <div class="text-sm text-gray-600">Clear instructions & comments</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
+                                    <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                                        <i class="fas fa-tools text-purple-600"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-800">Maintenance Plans</div>
+                                        <div class="text-sm text-gray-600">Optional monthly support</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
+                                    <div class="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center">
+                                        <i class="fas fa-comments text-cyan-600"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-800">Priority Support</div>
+                                        <div class="text-sm text-gray-600">Fast response for clients</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details
+                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">How do we start working together?</h3>
+                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </summary>
+                    <div class="px-6 pb-6 -mt-2">
+                        <div class="pt-4 border-t border-gray-100">
+                            <div class="space-y-6">
+                                <!-- Step 1 -->
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                        1
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-2">Free Consultation</h4>
+                                        <p class="text-gray-700">Share your automation needs via the contact form or
+                                            schedule a call</p>
+                                    </div>
+                                </div>
+                                <!-- Step 2 -->
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                        2
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-2">Detailed Proposal</h4>
+                                        <p class="text-gray-700">I'll analyze your requirements and provide a detailed
+                                            plan with timeline & pricing</p>
+                                    </div>
+                                </div>
+                                <!-- Step 3 -->
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                        3
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-2">Development & Updates</h4>
+                                        <p class="text-gray-700">Regular progress updates and feedback sessions during
+                                            development</p>
+                                    </div>
+                                </div>
+                                <!-- Step 4 -->
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                        4
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-2">Delivery & Support</h4>
+                                        <p class="text-gray-700">Final delivery, testing, and ongoing support to ensure
+                                            everything works perfectly</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA -->
+                            <div
+                                class="mt-8 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200">
+                                <p class="text-gray-800 font-semibold mb-2">Ready to automate your workflows?</p>
+                                <a href="#contact"
+                                    class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                                    Start with a free consultation
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Still Have Questions -->
+            <div class="mt-12 text-center">
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Still have questions?</h3>
+                    <p class="text-gray-600 text-sm mb-6">I'm happy to answer any specific questions about your project.
+                    </p>
+                    <a href="#contact"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 active:translate-y-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                            </path>
+                        </svg>
+                        Ask Me Anything
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+    ============================================= -->
+    <section id="contact" class="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text">Get In Touch</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Ready to automate your workflows? Let's discuss your project.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Left Column - Profile & Info -->
+                <div class="h-full">
+                    <div class="glass-card p-8 rounded-2xl h-full flex flex-col">
+                        <h3 class="font-bold text-xl mb-6 text-left">Let's Work Together</h3>
+                        <p class="text-gray-600 mb-8 text-left">
+                            I'm always open to discussing new projects, creative ideas, or opportunities to be part of
+                            your vision. Whether you need a quick automation script or a comprehensive workflow
+                            solution, I'm here to help.
+                        </p>
+
+                        <div class="mt-2 pt-6 border-t border-gray-200"></div>
+
+                        <!-- Profiles -->
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <!-- Left Side - Image -->
+                            <div class="md:w-1/3">
+                                <div class="rounded-2xl overflow-hidden shadow-lg bg-gray-100 h-full">
+                                    <img src="assets/images/shancyan.png" alt="Profile" class="h-full object-cover">
+                                </div>
+                            </div>
+
+                            <!-- Right Side - Content -->
+                            <div class="space-y-8">
+                                <!-- Connect With Me -->
+                                <div class="mb-8">
+                                    <h4 class="font-semibold mb-6 text-left text-lg">Connect With Me</h4>
+                                    <div class="flex justify-start gap-4">
+                                        <!-- Fiverr -->
+                                        <a href="https://www.fiverr.com/mhshan/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="group relative w-10 h-10 rounded-full flex items-center justify-center transition-all p-2.5 hover:scale-105 shadow-sm hover:shadow-md bg-green-500"
+                                            title="Fiverr Profile">
+                                            <span class="text-white font-black text-xl">fi</span>
+                                            <div
+                                                class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-xs font-semibold text-green-700 bg-green-50 px-2 py-1 rounded-lg border border-green-100">
+                                                Fiverr</div>
+                                        </a>
+                                        <!-- Upwork -->
+                                        <a href="https://www.upwork.com/freelancers/mhshan" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="group relative w-10 h-10 rounded-full flex items-center justify-center transition-all  p-2.5 hover:scale-105 shadow-sm hover:shadow-md bg-lime-500"
+                                            title="Upwork Profile">
+                                            <span class="text-white font-black text-xl">up</span>
+                                            <div
+                                                class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap text-xs font-semibold text-lime-700 bg-lime-50 px-2 py-1 rounded-lg border border-lime-100">
+                                                Upwork</div>
+                                        </a>
+                                        <!-- Twitter -->
+                                        <a href="https://x.com/mhshan7" target="_blank" rel="noopener noreferrer"
+                                            class="group relative w-10 h-10 rounded-full flex items-center justify-center transition-all p-2.5 hover:scale-105 shadow-sm hover:shadow-md bg-black"
+                                            title="X Profile">
+                                            <svg viewBox="0 0 24 24" class="w-full h-full fill-white">
+                                                <path
+                                                    d="M18.244 2H21.552L14.345 10.471L22.83 22H16.19L11.05 15.317L5.115 22H1.805L9.51 13.111L1.37 2H8.18L12.82 8.012L18.244 2Z" />
+                                            </svg>
+                                            <div
+                                                class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-semibold text-gray-800 bg-gray-50 px-2 py-1 rounded-lg border">
+                                                X</div>
+                                        </a>
+                                        <!-- Facebook -->
+                                        <a href="https://facebook.com/mhshan.0" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="group relative w-10 h-10 rounded-full flex items-center justify-center transition-all p-2.5 hover:scale-105 shadow-sm hover:shadow-md bg-blue-600"
+                                            title="Facebook Profile">
+                                            <svg viewBox="0 0 24 24" class="w-full h-full fill-white">
+                                                <path
+                                                    d="M22 12a10 10 0 1 0-11.56 9.88v-6.99h-2.8v-2.89h2.8V9.41c0-2.76 1.64-4.29 4.15-4.29 1.2 0 2.45.21 2.45.21v2.7h-1.38c-1.36 0-1.79.85-1.79 1.72v2.06h3.04l-.49 2.89h-2.55v6.99A10 10 0 0 0 22 12Z" />
+                                            </svg>
+                                            <div
+                                                class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded-lg border">
+                                                Facebook</div>
+                                        </a>
+                                        <!-- Whatsapp -->
+                                        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
+                                            class="group relative w-10 h-10 rounded-full flex items-center justify-center transition-all p-2.5 hover:scale-105 shadow-sm hover:shadow-md bg-green-500"
+                                            title="WhatsApp Chat">
+                                            <svg viewBox="0 0 24 24" class="w-full h-full fill-white">
+                                                <path
+                                                    d="M20.52 3.48A11.91 11.91 0 0 0 12.07 0C5.5.03.06 5.5.1 12.07a11.93 11.93 0 0 0 1.64 6L0 24l6.1-1.6a12 12 0 0 0 5.97 1.52h.01c6.57 0 12-5.47 12-12.04a11.9 11.9 0 0 0-3.56-8.4z" />
+                                            </svg>
+                                            <div
+                                                class="absolute -bottom-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-xs font-semibold text-green-700 bg-green-50 px-2 py-1 rounded-lg border">
+                                                WhatsApp</div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="mt-2 border-t border-gray-200"></div>
+
+                                <!-- Why Work With Me -->
+                                <div class="border-gray-100">
+                                    <h4 class="text-base font-bold text-gray-900 mb-4">Why Work With Me?</h4>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-5 h-5 bg-blue-100 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor"
+                                                    viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="text-gray-700 text-sm leading-relaxed">517+ successful projects
+                                                delivered</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-5 h-5 bg-blue-100 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor"
+                                                    viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="text-gray-700 text-sm leading-relaxed">Fast response time
+                                                (usually within hours)</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-5 h-5 bg-blue-100 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor"
+                                                    viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="text-gray-700 text-sm leading-relaxed">Clean, maintainable code
+                                                with documentation</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <div
+                                                class="w-5 h-5 bg-blue-100 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor"
+                                                    viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                            <span class="text-gray-700 text-sm leading-relaxed">Ongoing support and
+                                                maintenance available</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Contact Form -->
+                <div>
+                    <div class="glass-card p-8 rounded-2xl">
+                        <h3 class="font-bold text-xl mb-6">Send a Message</h3>
+
+                        <form id="contact-form" class="space-y-6">
+                            <!-- Name & Email -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                                    <input type="text" id="name" class="contact-input w-full" placeholder="Your name"
+                                        required />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                    <input type="email" id="email" class="contact-input w-full"
+                                        placeholder="your.email@example.com" required />
+                                </div>
+                            </div>
+
+                            <!-- Project Type / Timeline / Budget -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <!-- Project Type -->
+                                <div class="custom-dropdown" id="project-type-dropdown">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Project Type *</label>
+                                    <div class="dropdown-select">
+                                        <span class="selected-text">Select a service</span>
+                                        <i class="fas fa-chevron-down transition-transform"></i>
+                                    </div>
+                                    <div class="dropdown-options" id="project-type-options">
+                                        <div class="dropdown-option">Loading...</div>
+                                    </div>
+                                    <input type="hidden" id="project-type-input" required />
+                                </div>
+
+                                <!-- Timeline -->
+                                <div class="custom-dropdown" id="timeline-dropdown">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
+                                    <div class="dropdown-select">
+                                        <span class="selected-text">Select timeline</span>
+                                        <i class="fas fa-chevron-down transition-transform"></i>
+                                    </div>
+                                    <div class="dropdown-options" id="timeline-options">
+                                        <div class="dropdown-option">Loading...</div>
+                                    </div>
+                                    <input type="hidden" id="timeline-input" />
+                                </div>
+
+                                <!-- Budget -->
+                                <div class="custom-dropdown" id="budget-dropdown">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Budget</label>
+                                    <div class="dropdown-select">
+                                        <span class="selected-text">Select range</span>
+                                        <i class="fas fa-chevron-down transition-transform"></i>
+                                    </div>
+                                    <div class="dropdown-options" id="budget-options">
+                                        <div class="dropdown-option">Loading...</div>
+                                    </div>
+                                    <input type="hidden" id="budget-input" />
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea id="message" class="contact-input w-full h-40"
+                                    placeholder="Tell me about your project..." required></textarea>
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 pill font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 active:translate-y-0">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+
+                            <p class="text-center text-gray-500 text-sm mt-4">
+                                Response guaranteed within 24 hours. No spam, ever.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FLOATING SCROLL BUTTON
+    ============================================= -->
+    <button id="scrollButton"
+        class="fixed bottom-6 right-6 w-12 h-12 rounded-full flex items-center justify-center shadow-2xl z-50 transition-all duration-500 ease-out opacity-0 translate-y-4"
+        onclick="handleScrollToggle()" title="Scroll to bottom">
+        <div
+            class="scroll-button-inner w-full h-full rounded-full flex items-center justify-center relative overflow-hidden">
+            <svg id="scrollArrow" class="w-6 h-6 text-white z-10 relative transition-all duration-500 ease-out"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 transition-opacity duration-700 ease-out pulse-layer">
+            </div>
+        </div>
+    </button>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="w-full border-t border-gray-800 bg-gray-900 py-6 mt-auto shadow-[0_-4px_12px_-2px_rgba(0,0,0,0.3)]">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Logo Section -->
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <div
+                            class="w-11 h-11 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-lg shadow-black/30 border border-gray-700">
+                            <div class="text-white font-bold text-sm tracking-tight">mhs</div>
+                        </div>
+                        <div
+                            class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 border-2 border-gray-900 shadow-[0_0_8px_rgba(59,130,246,0.5)]">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">mhshan</div>
+                        <div class="flex items-center gap-1 text-xs text-gray-400 mt-0.5">
+                            <i class="fas fa-code text-cyan-400"></i>
+                            <span>Code • Design • Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="https://www.linkedin.com/in/mhshan7/" target="_blank"
+                        class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300 hover:scale-110 group relative shadow-lg shadow-black/20 hover:shadow-blue-500/20"
+                        title="LinkedIn Profile">
+                        <i class="fab fa-linkedin text-sm"></i>
+                        <div
+                            class="absolute -top-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap pointer-events-none border border-gray-700 shadow-lg">
+                            LinkedIn</div>
+                    </a>
+                    <a href="https://www.fiverr.com/mhshan" target="_blank"
+                        class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300 hover:scale-110 group relative shadow-lg shadow-black/20 hover:shadow-green-500/20"
+                        title="Fiverr Profile">
+                        <i class="fas fa-dollar-sign text-sm"></i>
+                        <div
+                            class="absolute -top-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap pointer-events-none border border-gray-700 shadow-lg">
+                            Fiverr</div>
+                    </a>
+                    <a href="https://www.facebook.com/mhshan.0" target="_blank"
+                        class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300 hover:scale-110 group relative shadow-lg shadow-black/20 hover:shadow-blue-600/20"
+                        title="Facebook Page">
+                        <i class="fab fa-facebook text-sm"></i>
+                        <div
+                            class="absolute -top-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap pointer-events-none border border-gray-700 shadow-lg">
+                            Facebook</div>
+                    </a>
+                    <a href="https://twitter.com/mhshan7" target="_blank"
+                        class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300 hover:scale-110 group relative shadow-lg shadow-black/20 hover:shadow-sky-500/20"
+                        title="Twitter Profile">
+                        <i class="fab fa-twitter text-sm"></i>
+                        <div
+                            class="absolute -top-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap pointer-events-none border border-gray-700 shadow-lg">
+                            Twitter</div>
+                    </a>
+                    <a href="https://dribbble.com/mhshan" target="_blank"
+                        class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300 hover:scale-110 group relative shadow-lg shadow-black/20 hover:shadow-pink-500/20"
+                        title="Dribbble Portfolio">
+                        <i class="fab fa-dribbble text-sm"></i>
+                        <div
+                            class="absolute -top-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-800 text-white text-xs px-2 py-1 rounded-full whitespace-nowrap pointer-events-none border border-gray-700 shadow-lg">
+                            Dribbble</div>
+                    </a>
+                </div>
+
+                <!-- Copyright & Info -->
+                <div class="text-center md:text-right">
+                    <div class="text-xs text-gray-400 mb-1">
+                        © 2026 • Developed by <span class="font-semibold text-white">mhshan</span>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end gap-2 text-xs">
+                        <div
+                            class="flex items-center gap-1 px-2 py-1 rounded-full bg-gray-800 text-green-400 border border-gray-700 shadow-inner">
+                            <div class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_6px_rgba(34,197,94,0.6)]"></div>
+                            <span class="font-medium">System Active</span>
+                        </div>
+                        <span class="text-gray-700">|</span>
+                        <span class="text-gray-500 font-mono">v2.0.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT IMPORTS
+    ============================================= -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

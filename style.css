@@ -1,0 +1,1113 @@
+/* ============================================
+   BASE STYLES & RESETS
+============================================= */
+* {
+    font-family: 'Inter', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: #5cb6e6 #f1f1f1;
+}
+
+html,
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* For Webkit browsers */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4361ee, #3a0ca3);
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3a0ca3, #7209b7);
+}
+
+/* Specific element scrollbar */
+.custom-element::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-element::-webkit-scrollbar-thumb {
+    background: #f72585;
+    border-radius: 4px;
+}
+
+/* ============================================
+   TYPOGRAPHY & TEXT EFFECTS
+============================================= */
+.text-gradient {
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #06b6d4 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ============================================
+   COMPONENT STYLES
+============================================= */
+
+/* Glass Card Effect */
+.glass-card {
+    background: rgb(255 255 255 / 70%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
+}
+
+/* Pill/Rounded Elements */
+.pill {
+    border-radius: 50px;
+}
+
+/* Stat Cards */
+.stat-card {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #bae6fd;
+}
+
+/* Tech Icons */
+.tech-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0369a1;
+    font-size: 20px;
+}
+
+/* Navigation */
+.nav-link {
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    color: #4b5563;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background: #dbf4ff;
+    color: #111827;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link.active {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    border-radius: 1px;
+}
+
+/* Smooth Navigation Styles */
+.nav-link-smooth {
+    position: relative;
+    color: #6b7280;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-link-smooth:hover {
+    color: #111827;
+}
+
+.nav-link-smooth.active {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+/* Hide the individual indicator divs inside links */
+.nav-indicator {
+    display: none;
+}
+
+/* Project Filters */
+.project-filter {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border: 1px solid #e2e8f0;
+    border-radius: 26px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background 0.3s ease-in-out,
+        color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out,
+        transform 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+}
+
+.project-filter:hover {
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+    color: #1d4ed8;
+    border-color: #93c5fd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.project-filter.active {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Search Input */
+.search-input {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #475569;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Project Cards */
+.project-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+}
+
+/* Custom Dropdown */
+.custom-dropdown {
+    position: relative;
+}
+
+.dropdown-select {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.dropdown-select:hover {
+    border-color: #c7d2fe;
+}
+
+.dropdown-options {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dropdown-options.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+    color: #475569;
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background: #f8fafc;
+}
+
+.dropdown-option.selected {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+.dropdown-select i {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-select i.rotate {
+    transform: rotate(180deg);
+}
+
+/* Contact Input */
+.contact-input {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #475569;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.contact-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Workflow Nodes */
+.workflow-node {
+    background: white;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.workflow-node:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+    border-color: #c7d2fe;
+}
+
+/* Skill Card */
+.skill-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   ANIMATIONS & TRANSITIONS
+============================================= */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cursor-blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Floating Icon animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes float-slow {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-3deg);
+    }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Progress Bar Animation */
+.progress-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 9999px;
+    background: #e5e7eb2f;
+    height: 8px;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    border-radius: 9999px;
+    animation: progressCycle 6s linear infinite;
+}
+
+@keyframes progressCycle {
+    0% {
+        width: 0%;
+        opacity: 1;
+    }
+
+    66.67% {
+        /* 4 seconds to reach 100% */
+        width: 100%;
+        opacity: 1;
+    }
+
+    66.68% {
+        /* Pause at 100% */
+        width: 100%;
+        opacity: 1;
+    }
+
+    99.99% {
+        /* Pause continues */
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        /* Instant reset */
+        width: 0%;
+        opacity: 1;
+    }
+}
+
+/* Alternative with fade out effect during reset */
+.progress-fill-fade {
+    animation: progressWithFade 6s ease-in-out infinite;
+}
+
+@keyframes progressWithFade {
+    0% {
+        width: 0%;
+        opacity: 1;
+    }
+
+    66.67% {
+        /* Fill to 100% in 4 seconds */
+        width: 100%;
+        opacity: 1;
+    }
+
+    83.33% {
+        /* Stay at 100% for 1 more second (total 5 seconds) */
+        width: 100%;
+        opacity: 1;
+    }
+
+    91.67% {
+        /* Start fading out */
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    100% {
+        /* Complete reset */
+        width: 0%;
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   ENHANCED SMOOTH STICKY FILTER
+============================================= */
+
+/* Wrapper for smooth transitions */
+.filter-transform-wrapper {
+    position: relative;
+}
+
+/* Initial state - normal position */
+.sticky-filter-bar {
+    position: relative;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 40;
+    margin-bottom: 2rem;
+    will-change: transform, opacity;
+}
+
+/* Sticky state - slides up and sticks */
+.sticky-filter-bar.sticky-active {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    transform: translateY(0);
+    animation: slideInDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+}
+
+/* Container to keep layout consistent */
+.sticky-filter-bar.sticky-active>div {
+    max-width: calc(100% - 3rem);
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+}
+
+/* Slide up animation */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Slide out animation when reaching end */
+.sticky-filter-bar.sticky-exit {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+/* Hide when at the end of section */
+.sticky-filter-bar.sticky-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-out;
+}
+
+/* Smooth return animation */
+.sticky-filter-bar.sticky-return {
+    animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Smooth slide up animation for returning to position */
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Spacer to prevent content jump */
+.filter-spacer {
+    height: 0;
+    transition: height 0.3s ease;
+}
+
+.sticky-active+.filter-spacer {
+    height: 70px;
+    /* Same height as your filter bar */
+}
+
+/* Smooth projects grid transition */
+#projects-grid {
+    transition: transform 0.3s ease;
+}
+
+.sticky-active~#projects-grid {
+    transform: translateY(20px);
+}
+
+/* Add a subtle delay before hiding to prevent flicker */
+.sticky-filter-bar.sticky-hidden {
+    transition-delay: 0.1s;
+}
+
+/* When projects are visible at top, ensure filter is visible */
+.sticky-filter-bar.projects-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Fix for z-index conflicts */
+#projects .sticky-filter-bar {
+    z-index: 40;
+}
+
+#testimonials {
+    z-index: 10;
+    position: relative;
+}
+
+/* ============================================
+   SCROLL BUTTON STYLES
+============================================= */
+.scroll-button-inner {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
+}
+
+/* Main button visible state */
+#scrollButton.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Hover effect - smooth and elegant */
+#scrollButton:hover .scroll-button-inner {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow:
+        0 15px 35px rgba(59, 130, 246, 0.4),
+        0 0 0 8px rgba(59, 130, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active/Click effect */
+#scrollButton:active .scroll-button-inner {
+    transform: scale(0.95);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    transition: all 0.2s ease-out;
+}
+
+/* Hover icon animation - only vertical movement */
+#scrollButton:hover #scrollArrow {
+    transform: translateY(-1px);
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When at bottom, arrow points UP */
+#scrollButton.at-bottom #scrollArrow {
+    transform: rotate(180deg);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When at bottom AND hovering - arrow stays UP but moves up */
+#scrollButton.at-bottom:hover #scrollArrow {
+    transform: translateY(-1px) rotate(180deg);
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pulse animation on hover */
+#scrollButton:hover .pulse-layer {
+    opacity: 1;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+}
+
+/* Scroll indicator animation */
+@keyframes scrollBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Subtle bounce when visible */
+#scrollButton.visible {
+    animation: scrollBounce 1.5s ease 0.5s;
+}
+
+/* ============================================
+   FAQ ACCORDION STYLES
+============================================= */
+/* Remove default details marker */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Smooth opening animation */
+details[open] summary~* {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Hover effects */
+details:hover {
+    transform: translateY(-2px);
+}
+
+/* Gradient animations for items */
+details {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+details:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+details:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+details:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+details:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+details:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================= */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ============================================
+   SMOOTH UNIVERSAL LOADER
+============================================= */
+.smooth-universal-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.514);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    /* Transition will be added via JS for better control */
+}
+
+.smooth-loader-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    /* Transition will be added via JS for better control */
+}
+
+.smooth-loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 5rem;
+    margin-bottom: 2rem;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.smooth-loader:before,
+.smooth-loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    animation: pulsOut 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 1rem rgba(59, 130, 246, 0.3));
+}
+
+.smooth-loader:before {
+    width: 100%;
+    padding-bottom: 100%;
+    box-shadow: inset 0 0 0 1rem #3b82f6;
+    animation-name: pulsIn;
+}
+
+.smooth-loader:after {
+    width: calc(100% - 2rem);
+    padding-bottom: calc(100% - 2rem);
+    box-shadow: 0 0 0 0 #3b82f6;
+}
+
+.smooth-loader-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-top: 1rem;
+    opacity: 1;
+    transform: translateY(0);
+    /* Transition will be controlled via JS */
+}
+
+/* Animation keyframes remain the same */
+@keyframes pulsIn {
+    0% {
+        box-shadow: inset 0 0 0 1rem #3b82f6;
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        box-shadow: inset 0 0 0 0 #3b82f6;
+        opacity: 0;
+    }
+}
+
+@keyframes pulsOut {
+
+    0%,
+    50% {
+        box-shadow: 0 0 0 0 #3b82f6;
+        opacity: 0;
+    }
+
+    100% {
+        box-shadow: 0 0 0 1rem #3b82f6;
+        opacity: 1;
+    }
+}
+
+/* Optional gradient overlay */
+.smooth-universal-loader::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.05) 0%,
+            rgba(6, 182, 212, 0.05) 50%,
+            rgba(139, 92, 246, 0.05) 100%);
+    pointer-events: none;
+}
+
+/* ============================================
+   MOBILE MENU ANIMATIONS
+============================================= */
+.animate-fade-in {
+    animation: fadeInDown 0.3s ease-out forwards;
+}
+
+.animate-fade-out {
+    animation: fadeOutUp 0.3s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Mobile menu styles */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+#mobile-menu:not(.hidden) {
+    max-height: 400px;
+    /* Adjust based on your content height */
+    opacity: 1;
+}
+
+/* Mobile menu button icon transition */
+#mobile-menu-btn i {
+    transition: transform 0.3s ease;
+}
+
+#mobile-menu-btn i.fa-times {
+    transform: rotate(90deg);
+}
+
+
+/* ============================================
+   FORM MESSAGES
+============================================= */
+.form-message {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.animate-fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* ============================================
+   FOOTER GLOW EFFECTS
+============================================= */
+/* Add subtle pulse animation to the active dot */
+@keyframes subtle-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+    }
+
+    50% {
+        opacity: 0.8;
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+}
+
+/* Add this class to any element for glow pulse */
+.glow-pulse {
+    animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+/* Apply pulse to the green dot */
+footer .bg-green-500 {
+    animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+/* Hover effects for social icons */
+footer a:hover i {
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+============================================= */
+@media (max-width: 768px) {
+    .sticky-filter-bar.sticky-active {
+        top: 70px;
+    }
+
+    .sticky-filter-bar.sticky-active>div {
+        max-width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    /* Mobile optimization for scroll button */
+    #scrollButton {
+        bottom: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+
+    #scrollButton:hover .scroll-button-inner {
+        transform: scale(1.05);
+    }
+}
+
+/* For desktop - center within container */
+@media (min-width: 1024px) {
+    .sticky-filter-bar.sticky-active>div {
+        max-width: 1024px;
+    }
+}
+
+/* Dark mode consideration */
+@media (prefers-color-scheme: dark) {
+    .scroll-button-inner {
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.35);
+    }
+
+    #scrollButton:hover .scroll-button-inner {
+        box-shadow:
+            0 15px 35px rgba(59, 130, 246, 0.5),
+            0 0 0 8px rgba(59, 130, 246, 0.15);
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    #scrollButton,
+    #scrollButton * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
