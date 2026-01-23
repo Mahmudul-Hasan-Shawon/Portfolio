@@ -1268,268 +1268,18 @@
                 </p>
             </div>
 
-            <!-- FAQ Accordion -->
-            <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <details
-                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">What types of automation do you
-                            specialize in?</h3>
-                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="px-6 pb-6 -mt-2">
-                        <div class="pt-4 border-t border-gray-100">
-                            <p class="text-gray-700 leading-relaxed">
-                                I specialize in <span class="font-semibold text-blue-600">Google Apps Script
-                                    automation</span>,
-                                <span class="font-semibold text-cyan-600">web scraping</span>,
-                                <span class="font-semibold text-purple-600">browser extensions</span>, and
-                                <span class="font-semibold text-indigo-600">workflow automation</span>.
-                                This includes automating repetitive tasks in Google Sheets, Gmail, data extraction from
-                                websites,
-                                and creating custom Chrome extensions to streamline your daily operations.
-                            </p>
-                        </div>
+            <!-- FAQ Accordion (Will be dynamically populated) -->
+            <div id="faq-accordion" class="space-y-4">
+                <!-- Loading state -->
+                <div class="text-center py-12">
+                    <div
+                        class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4">
                     </div>
-                </details>
-
-                <!-- FAQ Item 2 -->
-                <details
-                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">How long does a typical automation
-                            project take?</h3>
-                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="px-6 pb-6 -mt-2">
-                        <div class="pt-4 border-t border-gray-100">
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                Project duration varies based on complexity:
-                            </p>
-                            <ul class="space-y-3 text-gray-700">
-                                <li class="flex items-start gap-3">
-                                    <div
-                                        class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
-                                        <span class="text-blue-600 font-bold text-sm">1</span>
-                                    </div>
-                                    <span><span class="font-semibold">Simple scripts</span>: 1-3 days (Google Sheets
-                                        macros, basic data extraction)</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div
-                                        class="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center mt-0.5">
-                                        <span class="text-cyan-600 font-bold text-sm">2</span>
-                                    </div>
-                                    <span><span class="font-semibold">Medium projects</span>: 1-2 weeks (Chrome
-                                        extensions, API integrations)</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div
-                                        class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mt-0.5">
-                                        <span class="text-purple-600 font-bold text-sm">3</span>
-                                    </div>
-                                    <span><span class="font-semibold">Complex systems</span>: 2-4 weeks (Complete
-                                        workflow automation, multi-platform integration)</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </details>
-
-                <!-- FAQ Item 3 -->
-                <details
-                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">What's your pricing structure?</h3>
-                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="px-6 pb-6 -mt-2">
-                        <div class="pt-4 border-t border-gray-100">
-                            <div class="grid md:grid-cols-3 gap-4 mb-6">
-                                <div
-                                    class="p-4 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-200">
-                                    <div class="text-2xl font-bold text-green-600 mb-2">$500+</div>
-                                    <div class="font-semibold text-gray-800">Simple Projects</div>
-                                    <div class="text-sm text-gray-600 mt-1">Basic scripts & automation</div>
-                                </div>
-                                <div
-                                    class="p-4 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-200">
-                                    <div class="text-2xl font-bold text-blue-600 mb-2">$1,000+</div>
-                                    <div class="font-semibold text-gray-800">Standard Projects</div>
-                                    <div class="text-sm text-gray-600 mt-1">Extensions & integrations</div>
-                                </div>
-                                <div
-                                    class="p-4 bg-gradient-to-br from-purple-50 to-white rounded-xl border border-purple-200">
-                                    <div class="text-2xl font-bold text-purple-600 mb-2">$2,500+</div>
-                                    <div class="font-semibold text-gray-800">Complex Systems</div>
-                                    <div class="text-sm text-gray-600 mt-1">Complete workflow solutions</div>
-                                </div>
-                            </div>
-                            <p class="text-gray-700">
-                                <span class="font-semibold text-blue-600">Flexible options</span> available: hourly rate
-                                ($40-60/hr),
-                                fixed project pricing, or monthly retainers for ongoing automation needs.
-                                I provide detailed quotes after understanding your requirements.
-                            </p>
-                        </div>
-                    </div>
-                </details>
-
-                <!-- FAQ Item 4 -->
-                <details
-                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">Do you provide ongoing support and
-                            maintenance?</h3>
-                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="px-6 pb-6 -mt-2">
-                        <div class="pt-4 border-t border-gray-100">
-                            <p class="text-gray-700 leading-relaxed mb-6">
-                                Yes! All projects include:
-                            </p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
-                                    <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                                        <i class="fas fa-life-ring text-green-600"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-gray-800">30-Day Support</div>
-                                        <div class="text-sm text-gray-600">Free bug fixes & adjustments</div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
-                                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                                        <i class="fas fa-book text-blue-600"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-gray-800">Full Documentation</div>
-                                        <div class="text-sm text-gray-600">Clear instructions & comments</div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
-                                    <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-                                        <i class="fas fa-tools text-purple-600"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-gray-800">Maintenance Plans</div>
-                                        <div class="text-sm text-gray-600">Optional monthly support</div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200">
-                                    <div class="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center">
-                                        <i class="fas fa-comments text-cyan-600"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-gray-800">Priority Support</div>
-                                        <div class="text-sm text-gray-600">Fast response for clients</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-
-                <!-- FAQ Item 5 -->
-                <details
-                    class="group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                        <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">How do we start working together?</h3>
-                        <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </summary>
-                    <div class="px-6 pb-6 -mt-2">
-                        <div class="pt-4 border-t border-gray-100">
-                            <div class="space-y-6">
-                                <!-- Step 1 -->
-                                <div class="flex items-start gap-4">
-                                    <div
-                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
-                                        1
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-800 mb-2">Free Consultation</h4>
-                                        <p class="text-gray-700">Share your automation needs via the contact form or
-                                            schedule a call</p>
-                                    </div>
-                                </div>
-                                <!-- Step 2 -->
-                                <div class="flex items-start gap-4">
-                                    <div
-                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
-                                        2
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-800 mb-2">Detailed Proposal</h4>
-                                        <p class="text-gray-700">I'll analyze your requirements and provide a detailed
-                                            plan with timeline & pricing</p>
-                                    </div>
-                                </div>
-                                <!-- Step 3 -->
-                                <div class="flex items-start gap-4">
-                                    <div
-                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
-                                        3
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-800 mb-2">Development & Updates</h4>
-                                        <p class="text-gray-700">Regular progress updates and feedback sessions during
-                                            development</p>
-                                    </div>
-                                </div>
-                                <!-- Step 4 -->
-                                <div class="flex items-start gap-4">
-                                    <div
-                                        class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold">
-                                        4
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-gray-800 mb-2">Delivery & Support</h4>
-                                        <p class="text-gray-700">Final delivery, testing, and ongoing support to ensure
-                                            everything works perfectly</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- CTA -->
-                            <div
-                                class="mt-8 p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200">
-                                <p class="text-gray-800 font-semibold mb-2">Ready to automate your workflows?</p>
-                                <a href="#contact"
-                                    class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
-                                    Start with a free consultation
-                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </details>
+                    <p class="text-gray-600">Loading FAQs...</p>
+                </div>
             </div>
 
-            <!-- Still Have Questions -->
+            <!-- Still have questions section -->
             <div class="mt-12 text-center">
                 <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100">
                     <h3 class="text-lg font-bold text-gray-900 mb-3">Still have questions?</h3>
@@ -1548,6 +1298,133 @@
             </div>
         </div>
     </section>
+    <script>
+        // Function to load FAQs from Google Sheet
+        async function initializeFAQs() {
+            const faqAccordion = document.getElementById('faq-accordion');
+
+            try {
+                const response = await fetch(scriptURL + "?action=getFAQs");
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const faqs = await response.json();
+
+                if (faqs.error) {
+                    throw new Error(faqs.error);
+                }
+
+                // Clear loading state
+                faqAccordion.innerHTML = '';
+
+                if (!faqs || faqs.length === 0) {
+                    faqAccordion.innerHTML = `
+                <div class="text-center py-12">
+                    <i class="fas fa-question-circle text-4xl text-gray-400 mb-3"></i>
+                    <p class="text-gray-600">No FAQs available at the moment.</p>
+                </div>
+            `;
+                    return;
+                }
+
+                // Create FAQ items
+                faqs.forEach((faq, index) => {
+                    const faqItem = document.createElement('details');
+                    faqItem.className = `group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden animate-fade-in`;
+                    faqItem.style.animationDelay = `${index * 0.1}s`;
+
+                    // Parse answer and handle special formatting
+                    const answerHTML = formatFAQAnswer(faq.answer);
+
+                    faqItem.innerHTML = `
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                    <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">${faq.question}</h3>
+                    <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="px-6 pb-6 -mt-2">
+                    <div class="pt-4 border-t border-gray-100">
+                        ${answerHTML}
+                    </div>
+                </div>
+            `;
+
+                    faqAccordion.appendChild(faqItem);
+                });
+
+                // Initialize accordion behavior
+                initializeAccordionBehavior();
+
+            } catch (error) {
+                console.error('Error loading FAQs:', error);
+
+                faqAccordion.innerHTML = `
+            <div class="text-center py-12">
+                <i class="fas fa-exclamation-triangle text-3xl text-red-400 mb-3"></i>
+                <p class="text-gray-600">Failed to load FAQs. Please try again later.</p>
+                <p class="text-xs text-gray-500 mt-2">${error.message}</p>
+            </div>
+        `;
+            }
+        }
+
+        // Function to format FAQ answers with styling
+        function formatFAQAnswer(answer) {
+            // Split by paragraphs or list items
+            const lines = answer.split('\n').filter(line => line.trim() !== '');
+            let formattedHTML = '';
+
+            lines.forEach(line => {
+                const trimmedLine = line.trim();
+
+                // Check for bullet points or numbered lists
+                if (trimmedLine.match(/^[•\-\*]\s/) || trimmedLine.match(/^\d+\.\s/)) {
+                    formattedHTML += `<div class="flex items-start gap-3 mb-3">
+                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <span class="text-blue-600 font-bold text-sm">${trimmedLine.match(/^\d+\./) ? trimmedLine.split('.')[0] : '•'}</span>
+                </div>
+                <span class="text-gray-700 leading-relaxed">${trimmedLine.replace(/^[•\-\*]\s|^\d+\.\s/, '')}</span>
+            </div>`;
+                } else if (trimmedLine.match(/^\$/) || trimmedLine.match(/^\d+\$/)) {
+                    // Budget/price lines
+                    formattedHTML += `<div class="flex items-center gap-3 mb-2">
+                <span class="text-green-600 font-semibold">${trimmedLine}</span>
+            </div>`;
+                } else if (trimmedLine.match(/^\*\*/) && trimmedLine.match(/\*\*$/)) {
+                    // Bold text
+                    const boldText = trimmedLine.replace(/\*\*/g, '');
+                    formattedHTML += `<p class="font-semibold text-gray-800 mb-3">${boldText}</p>`;
+                } else {
+                    // Regular paragraph
+                    formattedHTML += `<p class="text-gray-700 leading-relaxed mb-4">${trimmedLine}</p>`;
+                }
+            });
+
+            return formattedHTML;
+        }
+
+        // Function to initialize accordion behavior
+        function initializeAccordionBehavior() {
+            const accordions = document.querySelectorAll('#faq-accordion details');
+
+            // Close other accordions when one opens
+            accordions.forEach(accordion => {
+                accordion.addEventListener('toggle', function () {
+                    if (this.open) {
+                        accordions.forEach(otherAccordion => {
+                            if (otherAccordion !== this && otherAccordion.open) {
+                                otherAccordion.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+        }
+    </script>
 
     <!-- ============================================
          CONTACT SECTION
@@ -1791,11 +1668,6 @@
                                     <i class="fas fa-paper-plane mr-2"></i>
                                     Send Message
                                 </button>
-
-                                <!-- 2. The Text Card -->
-                                <!-- 2. The Status Card (Response Guaranteed) -->
-                                <!-- ADD id="status-card" HERE -->
-                                <!-- 2. The Status Card (Response Guaranteed) -->
                                 <!-- 2. The Status Card -->
                                 <div id="status-card"
                                     class="sm:w-1/2 sm:order-1 w-full flex items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm text-sm text-slate-600 hover:border-blue-200 hover:shadow-md transition-all duration-300">

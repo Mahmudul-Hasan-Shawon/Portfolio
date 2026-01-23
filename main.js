@@ -1,10 +1,10 @@
 // ============================================
 // GLOBAL VARIABLES & CONSTANTS
 // ============================================
-const scriptURL = "https://script.google.com/macros/s/AKfycbwSvxqzy__T5yVps1kzYFw_WDZSAi3ZaWHvASuVm4TUij83J8LY1-7UT-fXoweXnQAz/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbyZZYKkewdVIDODBkqgi9_B2qbvkKkH5U6YH63ht9BwtGziP9kyJgNLX2YJNI6jqoYG/exec";
 
 // ============================================
-// DOM CONTENT LOADED - MAIN INITIALIZATION
+// DOM CONTENT LOADED - MAIN INITIALIZATION - loader initialization
 // ============================================
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize all components
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeProjects();
     initializeTestimonials();
     initializeDropdowns();
+    initializeFAQs();
     initializeSmoothStickyFilter();
     initializeScrollButton();
     initializeContactForm();
@@ -593,6 +594,135 @@ async function initializeTestimonials() {
     }
 }
 
+
+// ============================================
+// FAQ FUNCTIONS
+// ============================================
+// Function to load FAQs from Google Sheet
+async function initializeFAQs() {
+    const faqAccordion = document.getElementById('faq-accordion');
+    
+    try {
+        const response = await fetch(scriptURL + "?action=getFAQs");
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const faqs = await response.json();
+        
+        if (faqs.error) {
+            throw new Error(faqs.error);
+        }
+        
+        // Clear loading state
+        faqAccordion.innerHTML = '';
+        
+        if (!faqs || faqs.length === 0) {
+            faqAccordion.innerHTML = `
+                <div class="text-center py-12">
+                    <i class="fas fa-question-circle text-4xl text-gray-400 mb-3"></i>
+                    <p class="text-gray-600">No FAQs available at the moment.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        // Create FAQ items
+        faqs.forEach((faq, index) => {
+            const faqItem = document.createElement('details');
+            faqItem.className = `group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden`;
+            faqItem.style.animationDelay = `${index * 0.1}s`;
+            
+            // Parse answer and handle special formatting
+            const answerHTML = formatFAQAnswer(faq.answer);
+            
+            faqItem.innerHTML = `
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                    <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">${faq.question}</h3>
+                    <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+                <div class="px-6 pb-6 -mt-2">
+                    <div class="pt-4 border-t border-gray-100">
+                        ${answerHTML}
+                    </div>
+                </div>
+            `;
+            
+            faqAccordion.appendChild(faqItem);
+        });
+        
+        // Initialize accordion behavior
+        initializeAccordionBehavior();
+        
+    } catch (error) {
+        console.error('Error loading FAQs:', error);
+        
+        faqAccordion.innerHTML = `
+            <div class="text-center py-12">
+                <i class="fas fa-exclamation-triangle text-3xl text-red-400 mb-3"></i>
+                <p class="text-gray-600">Failed to load FAQs. Please try again later.</p>
+                <p class="text-xs text-gray-500 mt-2">${error.message}</p>
+            </div>
+        `;
+    }
+}
+
+// Function to format FAQ answers with styling
+function formatFAQAnswer(answer) {
+    // Split by paragraphs or list items
+    const lines = answer.split('\n').filter(line => line.trim() !== '');
+    let formattedHTML = '';
+    
+    lines.forEach(line => {
+        const trimmedLine = line.trim();
+        
+        // Check for bullet points or numbered lists
+        if (trimmedLine.match(/^[•\-\*]\s/) || trimmedLine.match(/^\d+\.\s/)) {
+            formattedHTML += `<div class="flex items-start gap-3 mb-3">
+                <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5 flex-shrink-0">
+                    <span class="text-blue-600 font-bold text-sm">${trimmedLine.match(/^\d+\./) ? trimmedLine.split('.')[0] : '•'}</span>
+                </div>
+                <span class="text-gray-700 leading-relaxed">${trimmedLine.replace(/^[•\-\*]\s|^\d+\.\s/, '')}</span>
+            </div>`;
+        } else if (trimmedLine.match(/^\$/) || trimmedLine.match(/^\d+\$/)) {
+            // Budget/price lines
+            formattedHTML += `<div class="flex items-center gap-3 mb-2">
+                <span class="text-green-600 font-semibold">${trimmedLine}</span>
+            </div>`;
+        } else if (trimmedLine.match(/^\*\*/) && trimmedLine.match(/\*\*$/)) {
+            // Bold text
+            const boldText = trimmedLine.replace(/\*\*/g, '');
+            formattedHTML += `<p class="font-semibold text-gray-800 mb-3">${boldText}</p>`;
+        } else {
+            // Regular paragraph
+            formattedHTML += `<p class="text-gray-700 leading-relaxed mb-4">${trimmedLine}</p>`;
+        }
+    });
+    
+    return formattedHTML;
+}
+
+// Function to initialize accordion behavior
+function initializeAccordionBehavior() {
+    const accordions = document.querySelectorAll('#faq-accordion details');
+    
+    // Close other accordions when one opens
+    accordions.forEach(accordion => {
+        accordion.addEventListener('toggle', function() {
+            if (this.open) {
+                accordions.forEach(otherAccordion => {
+                    if (otherAccordion !== this && otherAccordion.open) {
+                        otherAccordion.open = false;
+                    }
+                });
+            }
+        });
+    });
+}
 
 
 // ============================================
@@ -1377,9 +1507,7 @@ function initializePageLoader() {
     const startTime = Date.now();
 
     let loadedCount = 0;
-    const totalComponents = 3; // Projects, Testimonials, Dropdowns
-
-    // Remove the updateLoadingText function since we don't need text changes
+    const totalComponents = 4; // Changed from 3 to 4: Projects, Testimonials, Dropdowns, FAQs
 
     function componentLoaded() {
         loadedCount++;
@@ -1444,10 +1572,11 @@ function initializePageLoader() {
         }, 300);
     }
 
-    // Load all components
+    // Load all 4 components
     initializeProjects().finally(componentLoaded);
     initializeTestimonials().finally(componentLoaded);
     initializeDropdowns().finally(componentLoaded);
+    initializeFAQs().finally(componentLoaded); // Add this line for FAQs
 
     // Fallback after 5 seconds (shorter since no text changes)
     setTimeout(() => {
