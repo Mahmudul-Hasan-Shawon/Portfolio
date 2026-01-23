@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeDropdowns();
     initializeFAQs();
     initializeSmoothStickyFilter();
-    initializeScrollButton();
+    // initializeScrollButton();
     initializeContactForm();
     initializeHoverEffects();
     initializePageLoader();
@@ -1504,39 +1504,43 @@ function initializePageLoader() {
     }
 
     function hideLoader() {
-        console.log('Starting smooth hide sequence');
+    console.log('Starting smooth hide sequence');
 
-        // Start fading out the loader with smooth animation
-        loader.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+    // Start fading out the loader with smooth animation
+    loader.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
 
-        // Small delay before starting animation
+    // Small delay before starting animation
+    setTimeout(() => {
+        // Apply fade out effects
+        loader.style.opacity = '0';
+        loader.style.transform = 'translateY(-20px) scale(0.95)';
+        loader.style.backdropFilter = 'blur(2px)';
+
+        // Also fade out the content inside
+        const loaderContent = document.querySelector('.smooth-loader-content');
+        if (loaderContent) {
+            loaderContent.style.transition = 'all 0.6s ease';
+            loaderContent.style.opacity = '0';
+            loaderContent.style.transform = 'translateY(-10px) scale(0.95)';
+        }
+
+        // After fade out completes, hide and clean up
         setTimeout(() => {
-            // Apply fade out effects
-            loader.style.opacity = '0';
-            loader.style.transform = 'translateY(-20px) scale(0.95)';
-            loader.style.backdropFilter = 'blur(2px)';
+            loader.style.display = 'none';
+            loader.style.visibility = 'hidden';
 
-            // Also fade out the content inside
-            const loaderContent = document.querySelector('.smooth-loader-content');
-            if (loaderContent) {
-                loaderContent.style.transition = 'all 0.6s ease';
-                loaderContent.style.opacity = '0';
-                loaderContent.style.transform = 'translateY(-10px) scale(0.95)';
-            }
+            // Enable scrolling
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
 
-            // After fade out completes, hide and clean up
-            setTimeout(() => {
-                loader.style.display = 'none';
-                loader.style.visibility = 'hidden';
-
-                // Enable scrolling
-                document.body.style.overflow = 'auto';
-                document.documentElement.style.overflow = 'auto';
-
-                console.log('Loader removed smoothly');
-            }, 800); // Wait for fade out animation
-        }, 100); // Small delay before starting fade
-    }
+            console.log('Loader removed smoothly');
+            
+            // Initialize scroll button AFTER loader is completely hidden
+            initializeScrollButton();
+            
+        }, 800); // Wait for fade out animation
+    }, 100); // Small delay before starting fade
+}
 
     // Initial text setup
     if (loaderText) {
