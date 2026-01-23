@@ -601,23 +601,23 @@ async function initializeTestimonials() {
 // Function to load FAQs from Google Sheet
 async function initializeFAQs() {
     const faqAccordion = document.getElementById('faq-accordion');
-    
+
     try {
         const response = await fetch(scriptURL + "?action=getFAQs");
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        
+
         const faqs = await response.json();
-        
+
         if (faqs.error) {
             throw new Error(faqs.error);
         }
-        
+
         // Clear loading state
         faqAccordion.innerHTML = '';
-        
+
         if (!faqs || faqs.length === 0) {
             faqAccordion.innerHTML = `
                 <div class="text-center py-12">
@@ -627,40 +627,41 @@ async function initializeFAQs() {
             `;
             return;
         }
-        
+
         // Create FAQ items
         faqs.forEach((faq, index) => {
             const faqItem = document.createElement('details');
-            faqItem.className = `group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden`;
-            faqItem.style.animationDelay = `${index * 0.1}s`;
-            
+            faqItem.className = `faq-accordion-item group bg-gradient-to-r from-white to-gray-50/80 border border-gray-200/60 rounded-2xl hover:border-blue-300/50 transition-all duration-300 hover:shadow-lg overflow-hidden`;
+
             // Parse answer and handle special formatting
             const answerHTML = formatFAQAnswer(faq.answer);
-            
+
             faqItem.innerHTML = `
-                <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">${faq.question}</h3>
-                    <svg class="w-6 h-6 text-blue-600 flex-shrink-0 transform transition-transform group-open:rotate-180"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </summary>
-                <div class="px-6 pb-6 -mt-2">
-                    <div class="pt-4 border-t border-gray-100">
-                        ${answerHTML}
-                    </div>
-                </div>
-            `;
-            
+        <summary class="faq-summary flex items-center justify-between p-6 cursor-pointer list-none">
+            <h3 class="text-xl font-bold text-gray-800 flex-1 pr-4">${faq.question}</h3>
+            <svg class="faq-icon w-6 h-6 text-blue-600 flex-shrink-0" 
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </summary>
+        <div class="faq-content-wrapper">
+            <div class="faq-content pt-4 border-t border-gray-100 px-6 pb-6">
+                ${answerHTML}
+            </div>
+        </div>
+    `;
+
+            // Add animation delay for staggered entrance
+            faqItem.style.animationDelay = `${index * 0.1}s`;
+            faqItem.classList.add('animate-fade-in');
+
             faqAccordion.appendChild(faqItem);
         });
-        
-        // Initialize accordion behavior
-        initializeAccordionBehavior();
-        
+
+
     } catch (error) {
         console.error('Error loading FAQs:', error);
-        
+
         faqAccordion.innerHTML = `
             <div class="text-center py-12">
                 <i class="fas fa-exclamation-triangle text-3xl text-red-400 mb-3"></i>
@@ -676,10 +677,10 @@ function formatFAQAnswer(answer) {
     // Split by paragraphs or list items
     const lines = answer.split('\n').filter(line => line.trim() !== '');
     let formattedHTML = '';
-    
+
     lines.forEach(line => {
         const trimmedLine = line.trim();
-        
+
         // Check for bullet points or numbered lists
         if (trimmedLine.match(/^[•\-\*]\s/) || trimmedLine.match(/^\d+\.\s/)) {
             formattedHTML += `<div class="flex items-start gap-3 mb-3">
@@ -702,26 +703,8 @@ function formatFAQAnswer(answer) {
             formattedHTML += `<p class="text-gray-700 leading-relaxed mb-4">${trimmedLine}</p>`;
         }
     });
-    
-    return formattedHTML;
-}
 
-// Function to initialize accordion behavior
-function initializeAccordionBehavior() {
-    const accordions = document.querySelectorAll('#faq-accordion details');
-    
-    // Close other accordions when one opens
-    accordions.forEach(accordion => {
-        accordion.addEventListener('toggle', function() {
-            if (this.open) {
-                accordions.forEach(otherAccordion => {
-                    if (otherAccordion !== this && otherAccordion.open) {
-                        otherAccordion.open = false;
-                    }
-                });
-            }
-        });
-    });
+    return formattedHTML;
 }
 
 
@@ -1329,15 +1312,14 @@ function showFormMessage(message, type) {
                 flex items-center gap-2 
                 relative overflow-hidden
                 bg-white shadow-xl ring-1 ring-black/5 border-l-4 text-slate-700
-                ${isSuccess 
-                    ? 'border-emerald-500 shadow-[0_10px_40px_-15px_rgba(16,185,129,0.3)]' 
+                ${isSuccess
+                    ? 'border-emerald-500 shadow-[0_10px_40px_-15px_rgba(16,185,129,0.3)]'
                     : 'border-rose-500 shadow-[0_10px_40px_-15px_rgba(244,63,94,0.3)]'}
             `;
 
             // 3. UPDATE CONTENT: Exact HTML from your snippet
             statusInner.innerHTML = `
-                <div class="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-lg ${
-                    isSuccess ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
+                <div class="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-lg ${isSuccess ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
                 }">
                     <i class="fas ${isSuccess ? 'fa-check' : 'fa-xmark'}"></i>
                 </div>
@@ -1372,13 +1354,11 @@ function showFormMessage(message, type) {
         if (existingMessage) existingMessage.remove();
 
         const messageElement = document.createElement('div');
-        messageElement.className = `form-message p-4 rounded-xl mt-4 animate-fade-in flex items-center gap-4 bg-white shadow-xl ring-1 ring-black/5 border-l-4 text-slate-700 ${
-            type === 'success' ? 'border-emerald-500 shadow-[0_10px_40px_-15px_rgba(16,185,129,0.3)]' : 'border-rose-500 shadow-[0_10px_40px_-15px_rgba(244,63,94,0.3)]'
-        }`;
+        messageElement.className = `form-message p-4 rounded-xl mt-4 animate-fade-in flex items-center gap-4 bg-white shadow-xl ring-1 ring-black/5 border-l-4 text-slate-700 ${type === 'success' ? 'border-emerald-500 shadow-[0_10px_40px_-15px_rgba(16,185,129,0.3)]' : 'border-rose-500 shadow-[0_10px_40px_-15px_rgba(244,63,94,0.3)]'
+            }`;
 
         messageElement.innerHTML = `
-            <div class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg ${
-                type === 'success' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
+            <div class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg ${type === 'success' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
             }">
                 <i class="fas ${type === 'success' ? 'fa-check' : 'fa-xmark'}"></i>
             </div>
@@ -1407,11 +1387,11 @@ function restoreStatusCard() {
     if (statusCard && statusInner) {
         // Fade Out First
         statusInner.style.opacity = '0';
-        
+
         setTimeout(() => {
             // Restore Original Container Styles (Compact Style)
             statusCard.className = "sm:w-1/2 sm:order-1 w-full flex items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm text-sm text-slate-600 hover:border-blue-200 hover:shadow-md transition-all duration-300";
-            
+
             // Restore Original HTML Content
             statusInner.innerHTML = `
                 <div class="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
@@ -1422,7 +1402,7 @@ function restoreStatusCard() {
                     <span class="block text-xs sm:text-sm text-slate-500">We reply within 24 hours. No spam.</span>
                 </span>
             `;
-            
+
             // Fade In
             statusInner.style.opacity = '1';
         }, 300);

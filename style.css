@@ -654,13 +654,128 @@ body {
 /* ============================================
    FAQ ANIMATIONS
 ============================================= */
-/* FAQ Animation */
+/* FAQ Accordion CSS-only Smooth Animations */
+.faq-accordion-item {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hide default details marker */
+.faq-accordion-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Summary styles */
+.faq-summary {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.faq-summary:hover {
+    color: #3b82f6;
+}
+
+/* Icon rotation animation */
+.faq-icon {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-accordion-item[open] .faq-icon {
+    transform: rotate(180deg);
+}
+
+/* Content wrapper for height animation */
+.faq-content-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* When details is open, expand the wrapper */
+.faq-accordion-item[open] .faq-content-wrapper {
+    max-height: 1000px; /* Large enough to contain all content */
+}
+
+/* Content inside animation */
+.faq-content {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 
+        opacity 0.4s ease 0.1s,
+        transform 0.4s ease 0.1s;
+}
+
+.faq-accordion-item[open] .faq-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth border animation */
+.faq-accordion-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px 2px 0 0;
+    z-index: 1;
+}
+
+.faq-accordion-item[open]::before {
+    transform: scaleX(1);
+}
+
+/* Card lift effect when open */
+.faq-accordion-item[open] {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Remove the ugly focus outline */
+.faq-summary:focus {
+    outline: none;
+}
+
+.faq-summary:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Optional: Add a subtle indicator */
+.faq-summary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.faq-accordion-item:not([open]) .faq-summary:hover::after {
+    opacity: 1;
+}
+
+/* Close other accordions when one opens (JavaScript-free auto-close) */
+#faq-accordion:has(.faq-accordion-item[open]) .faq-accordion-item:not([open]) .faq-content-wrapper {
+    max-height: 0 !important;
+}
+
+/* Staggered entrance animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -668,30 +783,52 @@ body {
 }
 
 .animate-fade-in {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     opacity: 0;
 }
 
-/* FAQ specific styles */
-#faq-accordion details {
-    opacity: 0;
-}
-
-#faq-accordion details[open] summary~* {
-    animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .faq-content-wrapper,
+    .faq-content,
+    .faq-icon,
+    .faq-accordion-item,
+    .faq-accordion-item::before {
+        transition: none !important;
+        animation: none !important;
     }
-
-    to {
+    
+    .faq-accordion-item[open] .faq-content-wrapper {
+        max-height: none;
+    }
+    
+    .faq-accordion-item[open] .faq-content {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
     }
 }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .faq-accordion-item {
+        margin-bottom: 8px;
+    }
+    
+    .faq-summary {
+        padding: 16px;
+    }
+    
+    .faq-content {
+        padding: 0 16px 16px;
+    }
+    
+    .faq-content-wrapper {
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+
+
 
 /* ============================================
    SCROLL BUTTON STYLES
