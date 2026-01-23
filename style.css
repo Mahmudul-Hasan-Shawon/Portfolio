@@ -652,6 +652,48 @@ body {
 }
 
 /* ============================================
+   FAQ ANIMATIONS
+============================================= */
+/* FAQ Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* FAQ specific styles */
+#faq-accordion details {
+    opacity: 0;
+}
+
+#faq-accordion details[open] summary~* {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
    SCROLL BUTTON STYLES
 ============================================= */
 .scroll-button-inner {
@@ -860,7 +902,8 @@ details:nth-child(5) {
     --color-four: #bf4a1d80;
     --color-five: #ffbf4740;
     --time-animation: 2s;
-    --size: 0.8; /* Scaled down to fit better */
+    --size: 0.8;
+    /* Scaled down to fit better */
     position: relative;
     border-radius: 50%;
     transform: scale(var(--size));
@@ -889,11 +932,9 @@ details:nth-child(5) {
 .loader .box {
     width: 100px;
     height: 100px;
-    background: linear-gradient(
-        180deg,
-        var(--color-one) 30%,
-        var(--color-two) 70%
-    );
+    background: linear-gradient(180deg,
+            var(--color-one) 30%,
+            var(--color-two) 70%);
     mask: url(#clipping);
     -webkit-mask: url(#clipping);
 }
@@ -953,6 +994,7 @@ details:nth-child(5) {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -962,15 +1004,19 @@ details:nth-child(5) {
     0% {
         filter: contrast(15);
     }
+
     20% {
         filter: contrast(3);
     }
+
     40% {
         filter: contrast(3);
     }
+
     60% {
         filter: contrast(15);
     }
+
     100% {
         filter: contrast(15);
     }
@@ -980,18 +1026,23 @@ details:nth-child(5) {
     0% {
         filter: hue-rotate(0deg);
     }
+
     20% {
         filter: hue-rotate(-30deg);
     }
+
     40% {
         filter: hue-rotate(-60deg);
     }
+
     60% {
         filter: hue-rotate(-90deg);
     }
+
     80% {
         filter: hue-rotate(-45deg);
     }
+
     100% {
         filter: hue-rotate(0deg);
     }
@@ -1029,6 +1080,7 @@ details:nth-child(5) {
         opacity: 0;
         transform: translateY(10px) scale(0.98);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
