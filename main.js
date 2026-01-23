@@ -1186,16 +1186,27 @@ function showFormMessage(message, type) {
 
     // Create message element
     const messageElement = document.createElement('div');
-    messageElement.className = `form-message p-4 rounded-xl mt-4 animate-fade-in ${type === 'success'
-            ? 'bg-green-50 text-green-700 border border-green-200'
-            : 'bg-red-50 text-red-700 border border-red-200'
-        }`;
+
+    // UPDATED: Added colored shadow (shadow-emerald-500/20) to the ternary operator
+    messageElement.className = `form-message p-4 rounded-xl mt-4 animate-fade-in flex items-start gap-4 bg-white shadow-xl ring-1 ring-black/5 border-l-4 ${
+        type === 'success'
+            ? 'border-emerald-500 shadow-emerald-500/20' // Green border + Green Glow
+            : 'border-rose-500 shadow-rose-500/20'        // Red border + Red Glow
+    }`;
+
     messageElement.innerHTML = `
-        <div class="flex items-center">
-            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-3 text-lg"></i>
-            <span>${message}</span>
+        <div class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg ${
+            type === 'success' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
+        }">
+            <i class="fas ${type === 'success' ? 'fa-check' : 'fa-exclamation'}"></i>
+        </div>
+        <div class="flex-1">
+            <h4 class="font-bold text-sm text-slate-800 mb-0.5">${type === 'success' ? 'Success' : 'Error'}</h4>
+            <p class="text-sm text-slate-500 leading-snug">${message}</p>
         </div>
     `;
+    
+
 
     // Add to form
     const form = document.getElementById("contact-form");
