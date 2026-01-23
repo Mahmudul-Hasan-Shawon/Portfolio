@@ -127,10 +127,7 @@
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#services" class="nav-link">Services</a>
                     <a href="#faq" class="nav-link">FAQ</a>
-                    <a href="#contact"
-                        class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-5 py-2 pill font-medium text-center">
-                        Contact
-                    </a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -1796,17 +1793,20 @@
                                 </button>
 
                                 <!-- 2. The Text Card -->
-                                <div
-                                    class="sm:w-1/2 sm:order-1 w-full flex items-center justify-center px-3 py-2 bg-white rounded-2xl border border-slate-200 shadow-sm text-sm text-slate-600 hover:border-blue-200 hover:shadow-md transition-all">
+                                <!-- 2. The Status Card (Response Guaranteed) -->
+                                <!-- ADD id="status-card" HERE -->
+                                <!-- 2. The Status Card (Response Guaranteed) -->
+                                <!-- 2. The Status Card -->
+                                <div id="status-card"
+                                    class="sm:w-1/2 sm:order-1 w-full flex items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm text-sm text-slate-600 hover:border-blue-200 hover:shadow-md transition-all duration-300">
 
-                                    <div class="flex items-center gap-2 w-full justify-center sm:justify-start">
-                                        <!-- Icon -->
+                                    <!-- Wrapper for Smooth Transitions -->
+                                    <div id="status-inner"
+                                        class="flex items-center gap-2 w-full justify-center sm:justify-start px-3 py-2 transition-all duration-300">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 shrink-0">
+                                            class="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
                                             <i class="fas fa-shield-alt"></i>
                                         </div>
-
-                                        <!-- Text -->
                                         <span class="leading-snug text-center sm:text-left">
                                             <span class="block font-semibold text-slate-800">Response Guaranteed</span>
                                             <span class="block text-xs sm:text-sm text-slate-500">We reply within 24

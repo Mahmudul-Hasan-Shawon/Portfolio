@@ -1178,130 +1178,160 @@ function validateEmail(email) {
  * Show form message (success or error)
  */
 function showFormMessage(message, type) {
-    // Remove existing messages
-    const existingMessage = document.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
+    const statusCard = document.getElementById('status-card');
+    const statusInner = document.getElementById('status-inner');
 
-    // Create message element
-    const messageElement = document.createElement('div');
+    if (statusCard && statusInner) {
+        const isSuccess = type === 'success';
 
-    // UPDATED: Added colored shadow (shadow-emerald-500/20) to the ternary operator
-    messageElement.className = `form-message p-4 rounded-xl mt-4 animate-fade-in flex items-start gap-4 bg-white shadow-xl ring-1 ring-black/5 border-l-4 ${
-        type === 'success'
-            ? 'border-emerald-500 shadow-emerald-500/20' // Green border + Green Glow
-            : 'border-rose-500 shadow-rose-500/20'        // Red border + Red Glow
-    }`;
+        // 1. SMOOTH OUT: Fade out current content
+        statusInner.style.opacity = '0';
 
-    messageElement.innerHTML = `
-        <div class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg ${
-            type === 'success' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
-        }">
-            <i class="fas ${type === 'success' ? 'fa-check' : 'fa-exclamation'}"></i>
-        </div>
-        <div class="flex-1">
-            <h4 class="font-bold text-sm text-slate-800 mb-0.5">${type === 'success' ? 'Success' : 'Error'}</h4>
-            <p class="text-sm text-slate-500 leading-snug">${message}</p>
-        </div>
-    `;
-    
+        setTimeout(() => {
+            // 2. UPDATE CONTAINER: Apply exact classes from your snippet
+            // Note: I removed 'mt-4' since this is an inline card.
+            statusCard.className = `
+                sm:w-1/2 sm:order-1 w-full 
+                form-message 
+                p-2 
+                rounded-xl 
+                animate-fade-in 
+                flex items-center gap-2 
+                relative overflow-hidden
+                bg-white shadow-xl ring-1 ring-black/5 border-l-4 text-slate-700
+                ${isSuccess 
+                    ? 'border-emerald-500 shadow-[0_10px_40px_-15px_rgba(16,185,129,0.3)]' 
+                    : 'border-rose-500 shadow-[0_10px_40px_-15px_rgba(244,63,94,0.3)]'}
+            `;
 
+            // 3. UPDATE CONTENT: Exact HTML from your snippet
+            statusInner.innerHTML = `
+                <div class="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-lg ${
+                    isSuccess ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
+                }">
+                    <i class="fas ${isSuccess ? 'fa-check' : 'fa-xmark'}"></i>
+                </div>
+                
+                <div class="flex-1">
+                    <h4 class="font-bold text-sm text-slate-800">
+                        ${isSuccess ? 'Success' : 'Error'}
+                    </h4>
+                    <p class="text-sm text-slate-500 leading-snug mt-0.5">
+                        ${message}
+                    </p>
+                </div>
+                
+                <button onclick="restoreStatusCard()" class="text-slate-300 hover:text-slate-400 transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
 
-    // Add to form
-    const form = document.getElementById("contact-form");
-    form.appendChild(messageElement);
+            // 4. SMOOTH IN
+            statusInner.style.opacity = '1';
 
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        if (messageElement.parentNode) {
-            messageElement.classList.add('animate-fade-out');
+            // 5. Auto-restore after 5 seconds
             setTimeout(() => {
-                if (messageElement.parentNode) {
-                    messageElement.remove();
-                }
-            }, 300);
-        }
-    }, 5000);
+                restoreStatusCard();
+            }, 5000);
+
+        }, 300);
+
+    } else {
+        // Fallback: Create element at bottom if card not found
+        const existingMessage = document.querySelector('.form-message');
+        if (existingMessage) existingMessage.remove();
+
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message p-4 rounded-xl mt-4 animate-fade-in flex items-center gap-4 bg-white shadow-xl ring-1 ring-black/5 border-l-4 text-slate-700 ${
+            type === 'success' ? 'border-emerald-500 shadow-[0_10px_40px_-15px_rgba(16,185,129,0.3)]' : 'border-rose-500 shadow-[0_10px_40px_-15px_rgba(244,63,94,0.3)]'
+        }`;
+
+        messageElement.innerHTML = `
+            <div class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg ${
+                type === 'success' ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'
+            }">
+                <i class="fas ${type === 'success' ? 'fa-check' : 'fa-xmark'}"></i>
+            </div>
+            <div class="flex-1">
+                <h4 class="font-bold text-sm text-slate-800">${type === 'success' ? 'Success' : 'Error'}</h4>
+                <p class="text-sm text-slate-500 leading-snug mt-0.5">${message}</p>
+            </div>
+        `;
+
+        const form = document.getElementById("contact-form");
+        form.appendChild(messageElement);
+
+        setTimeout(() => {
+            messageElement.remove();
+        }, 5000);
+    }
 }
 
 /**
- * Reset all dropdowns to default state
+ * Helper: Restores the "Response Guaranteed" text to its original state
  */
+function restoreStatusCard() {
+    const statusCard = document.getElementById('status-card');
+    const statusInner = document.getElementById('status-inner');
+
+    if (statusCard && statusInner) {
+        // Fade Out First
+        statusInner.style.opacity = '0';
+        
+        setTimeout(() => {
+            // Restore Original Container Styles (Compact Style)
+            statusCard.className = "sm:w-1/2 sm:order-1 w-full flex items-center justify-center bg-white rounded-2xl border border-slate-200 shadow-sm text-sm text-slate-600 hover:border-blue-200 hover:shadow-md transition-all duration-300";
+            
+            // Restore Original HTML Content
+            statusInner.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="leading-snug text-center sm:text-left">
+                    <span class="block font-semibold text-slate-800">Response Guaranteed</span>
+                    <span class="block text-xs sm:text-sm text-slate-500">We reply within 24 hours. No spam.</span>
+                </span>
+            `;
+            
+            // Fade In
+            statusInner.style.opacity = '1';
+        }, 300);
+    }
+}
+
+// Reset Dropdowns (Unchanged)
 function resetDropdowns() {
     console.log("Resetting dropdowns...");
-
     document.querySelectorAll('.custom-dropdown').forEach((dropdown, index) => {
-        console.log(`Dropdown ${index + 1}:`, dropdown);
-
-        // Find the selected text element - check multiple possible selectors
         let selectedText = dropdown.querySelector('.selected-text');
         if (!selectedText) {
-            // Try other possible selectors
             selectedText = dropdown.querySelector('.dropdown-select span:first-child');
             selectedText = dropdown.querySelector('.dropdown-select > span');
         }
-
-        // Find the hidden input
         let hiddenInput = dropdown.querySelector('input[type="hidden"]');
         if (!hiddenInput) {
-            // Try to find by ID based on dropdown type
             const dropdownId = dropdown.id;
-            if (dropdownId === 'project-type-dropdown') {
-                hiddenInput = document.getElementById('project-type-input');
-            } else if (dropdownId === 'timeline-dropdown') {
-                hiddenInput = document.getElementById('timeline-input');
-            } else if (dropdownId === 'budget-dropdown') {
-                hiddenInput = document.getElementById('budget-input');
-            }
+            if (dropdownId === 'project-type-dropdown') hiddenInput = document.getElementById('project-type-input');
+            else if (dropdownId === 'timeline-dropdown') hiddenInput = document.getElementById('timeline-input');
+            else if (dropdownId === 'budget-dropdown') hiddenInput = document.getElementById('budget-input');
         }
-
-        // Find all options
         const options = dropdown.querySelectorAll('.dropdown-option');
-
-        console.log(`Found for dropdown ${index + 1}:`, {
-            selectedText: selectedText ? 'Yes' : 'No',
-            hiddenInput: hiddenInput ? 'Yes' : 'No',
-            optionsCount: options.length
-        });
-
-        // Reset selected text based on dropdown position or type
         if (selectedText) {
-            // Check which dropdown this is based on its content or position
             const dropdownText = selectedText.textContent.toLowerCase();
             const parentHtml = dropdown.outerHTML.toLowerCase();
-
-            if (parentHtml.includes('project-type') || dropdownText.includes('service') || index === 0) {
-                selectedText.textContent = 'Select a service';
-                console.log('Reset to: Select a service');
-            } else if (parentHtml.includes('timeline') || dropdownText.includes('timeline') || index === 1) {
-                selectedText.textContent = 'Select timeline';
-                console.log('Reset to: Select timeline');
-            } else if (parentHtml.includes('budget') || dropdownText.includes('range') || index === 2) {
-                selectedText.textContent = 'Select range';
-                console.log('Reset to: Select range');
-            } else {
-                selectedText.textContent = 'Select an option';
-                console.log('Reset to: Select an option');
-            }
+            if (parentHtml.includes('project-type') || dropdownText.includes('service') || index === 0) selectedText.textContent = 'Select a service';
+            else if (parentHtml.includes('timeline') || dropdownText.includes('timeline') || index === 1) selectedText.textContent = 'Select timeline';
+            else if (parentHtml.includes('budget') || dropdownText.includes('range') || index === 2) selectedText.textContent = 'Select range';
+            else selectedText.textContent = 'Select an option';
         }
-
-        // Reset hidden input value
-        if (hiddenInput) {
-            hiddenInput.value = '';
-            console.log('Hidden input cleared');
-        }
-
-        // Remove selected class from all options
-        options.forEach(option => {
-            option.classList.remove('selected');
-        });
-
-        console.log(`Dropdown ${index + 1} reset complete`);
+        if (hiddenInput) hiddenInput.value = '';
+        options.forEach(option => option.classList.remove('selected'));
     });
-
-    console.log("All dropdowns reset");
 }
+
+
+
+
 // ============================================
 // HOVER EFFECTS FUNCTIONS
 // ============================================
